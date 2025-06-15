@@ -45,5 +45,13 @@ def make_teleoperator_from_config(config: TeleoperatorConfig) -> Teleoperator:
         from tests.mocks.mock_teleop import MockTeleop
 
         return MockTeleop(config)
+    elif config.type == "bimanual_so100_leader":
+        from .bimanual_so100_leader import BimanualSO100Leader
+
+        return BimanualSO100Leader(config)
+    elif config.type == "bimanual_so101_leader":
+        from .bimanual_so101_leader import BimanualSO101Leader
+
+        return BimanualSO101Leader(config)
     else:
         raise ValueError(config.type)

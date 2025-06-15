@@ -49,6 +49,14 @@ def make_robot_from_config(config: RobotConfig) -> Robot:
         from tests.mocks.mock_robot import MockRobot
 
         return MockRobot(config)
+    elif config.type == "bimanual_so100_follower":
+        from .bimanual_so100_follower import BimanualSO100Follower
+
+        return BimanualSO100Follower(config)
+    elif config.type == "bimanual_so101_follower":
+        from .bimanual_so101_follower import BimanualSO101Follower
+
+        return BimanualSO101Follower(config)
     else:
         raise ValueError(config.type)
 
