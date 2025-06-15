@@ -225,6 +225,7 @@ def record_loop(
 
 @parser.wrap()
 def record(cfg: RecordConfig) -> LeRobotDataset:
+    print("동욱 RECORD")
     init_logging()
     logging.info(pformat(asdict(cfg)))
     if cfg.display_data:
